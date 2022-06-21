@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* @apply overflow-y-hidden; */
+    @apply bg-Black;
+    @apply HighEmphasis;
+  }
+  section {
+    @apply snap-start;
+    @apply h-screen;
+    @apply relative;
+  }
+  body {
+    /* @apply overflow-y-hidden; */
+    @apply w-screen;
+    @apply h-screen;
+  }
+}
+
+@layer components {
+  .HighEmphasis {
+    @apply text-TextColor opacity-90;
+  }
+  .MediumEmphasis {
+    @apply text-TextColor opacity-70;
+  }
+  .Disabled {
+    @apply text-TextColor opacity-40;
+  }
+}
+
+/* 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: rgb(20, 20, 20);
+}
+
+h1 {
+  color:antiquewhite;
+La syntaxe de la commande n’est pas correcte.
+*/
