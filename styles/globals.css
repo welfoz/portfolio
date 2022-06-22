@@ -12,6 +12,7 @@
     @apply snap-start;
     @apply h-screen;
     @apply relative;
+    @apply z-0;
   }
   body {
     /* @apply overflow-y-hidden; */
@@ -29,6 +30,12 @@
   }
   .Disabled {
     @apply text-TextColor opacity-40;
+  }
+  .navBarCircle {
+    @apply h-2 w-2 rounded-full inline-block bg-white hover:scale-125; 
+  }
+  #active.navBarCircle {
+    @apply scale-150 duration-100;
   }
 }
 

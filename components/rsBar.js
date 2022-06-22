@@ -4,7 +4,7 @@ import linkedin from "../public/linkedinIcon.png"
 import twitter from "../public/twitterIcon.png" 
 export default function rsBar() {
     return(
-        <div className='fixed bottom-0 right-7 mix-blend-exclusion'>
+        <div className='fixed bottom-0 right-7 mix-blend-exclusion z-30'>
     <nav className="flex flex-col items-center space-y-1">
         <Icon link={gitub}/>
         <Icon link={linkedin}/>
