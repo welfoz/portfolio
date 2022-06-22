@@ -9,9 +9,12 @@
   }
   section {
     @apply snap-start;
-    @apply h-screen;
     @apply relative;
-    @apply z-0;
+    @apply flex flex-col items-center justify-center h-screen;
+
+    /* perspective */
+    transform-style: preserve-3d;
+    /* transform: translate3d(500px, 0, -500px) rotateY(30deg); */
   }
   body {
     @apply w-screen;
@@ -19,6 +22,10 @@
   }
   main {
     @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth;
+
+    /* perspective */
+    perspective: 300px;
+    /* perspective-origin: 0%; */
   }
 }
 
@@ -40,5 +47,16 @@
   }
   .navBarToolTip {
     @apply ml-4 text-xs opacity-0 group-hover:inline-block group-hover:opacity-100 group-hover:transition group-hover:scale-125; 
+  }
+  .parallax_layer {
+    /* @apply absolute; */
+    transform: translateZ(100px) scale(1);
+    @apply bg-green-600;
+    /* @apply inset-0; */
+    @apply min-h-screen;
+    @apply flex flex-col align-middle justify-center;
+
+
+    /* scale calculation: 1+ ((-Z transform value)/perspective) */
   }
 }
