@@ -6,15 +6,15 @@ import React, { useState, useEffect } from 'react'
 import VerticalNavBar from '../components/navBarVertical'
 const Home: NextPage = () => {
 
-
-
+  // we use useEffect to add eventListener to the DOM
+  // in dev mode, useEffect is called 2 times => some issues 
+  // in prod mode, he has to be called 1 time
   useEffect(() => {
-    console.log("caca");
+    console.log("useEffect Index init");
     const screenH = window.innerHeight;
     const SCROLL_PADDING = 0;
+
     document.getElementById("main")?.addEventListener('scroll', (e) => {
-      console.log(e);
-      // console.log(document.getElementById("main")?.scrollTop);
       const scrollTop =  document.getElementById("main")?.scrollTop;
       if (scrollTop) {
         if ((scrollTop + SCROLL_PADDING) > (2*screenH - 1)) {
@@ -26,15 +26,14 @@ const Home: NextPage = () => {
           console.log("middle");
           const currentSpan =  document.querySelector("a[href='#projects']")?.children[0];
           changeId(currentSpan, "projects")
+
         } else {
           console.log("begin");
           const currentSpan =  document.querySelector("a[href='#welcome']")?.children[0];
           changeId(currentSpan, "welcome");
         }
-
       }
    }, {passive: true})
-
   })
 
   return (
@@ -78,6 +77,7 @@ function changeId(currentSpan: any, path: string) {
             console.log("change id")
             document.getElementById("active")?.removeAttribute("id");
             currentSpan.setAttribute("id", "active");
+            // if we want to update the url
             // window.location.hash = path;
     }
 }
