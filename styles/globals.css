@@ -35,4 +35,7 @@
   #active.navBarCircle {
     @apply scale-150 duration-100;
   }
+  .navBarToolTip {
+    @apply ml-4 text-xs opacity-0 group-hover:inline-block group-hover:opacity-100 group-hover:transition group-hover:scale-125; 
+  }
 }
