@@ -17,6 +17,9 @@
     @apply w-screen;
     @apply h-screen;
   }
+  main {
+    @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth;
+  }
 }
 
 @layer components {
