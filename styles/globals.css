@@ -9,8 +9,9 @@
   }
   section {
     @apply snap-start;
-    @apply relative;
-    @apply flex flex-col items-center justify-center h-screen;
+    @apply relative min-h-screen;
+    @apply flex flex-col;
+    /* @apply flex flex-col items-center justify-center h-screen; */
 
     /* perspective */
     transform-style: preserve-3d;
@@ -54,9 +55,17 @@
     @apply bg-green-600;
     /* @apply inset-0; */
     @apply min-h-screen;
-    @apply flex flex-col align-middle justify-center;
+    @apply flex;
+    /* @apply flex flex-col align-middle justify-center; */
 
 
     /* scale calculation: 1+ ((-Z transform value)/perspective) */
+  }
+  .staticClass {
+    @apply flex w-1/2 bg-red-200 h-screen sticky top-0;
+  }
+  .desc {
+    @apply flex flex-col w-1/2 bg-blue-200 h-full;
+    height: 300vh;
   }
 }

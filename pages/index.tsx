@@ -4,6 +4,7 @@ import Title from '../components/homescreenTitle'
 import RsBar from '../components/rsBar'
 import React, { useState, useEffect } from 'react'
 import VerticalNavBar from '../components/navBarVertical'
+import Project from '../pages/projects'
 const Home: NextPage = () => {
 
   // we use useEffect to add eventListener to the DOM
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
 
     document.getElementById("main")?.addEventListener('scroll', (e) => {
       const scrollTop =  document.getElementById("main")?.scrollTop;
+      screenSplittingScroll(scrollTop);
       if (scrollTop) {
         if ((scrollTop + SCROLL_PADDING) > (2*screenH - 1)) {
           console.log("en bas");
@@ -46,12 +48,42 @@ const Home: NextPage = () => {
         <VerticalNavBar />      
         <RsBar/>
         
+
+        {/* <div className="sticky top-0">heyyy</div> */}
+
       <main id='main'>
+        <div className="sticky top-0">heyyy</div>
+        <section className='bg-red-900'>
+
+         <div className="w-1/2 h-1/2 border-cyan-900 bg-green-500 sticky top-0">
+          sdxzs
+          ezxsssxs
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error voluptatem quasi recusandae distinctio architecto doloremque similique delectus, porro maxime aperiam in, dolore aliquid est ipsam, quaerat quas eos eligendi deleniti!
+        </div>
+ dcddcdddddddddddd
+        </section>
+        <section className='bg-green-200 flex-row h-fit justify-start'>
+          <div className="staticClass">Project</div>
+          <div className="desc">
+            DESC
+            <div className="detail">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem necessitatibus saepe amet sapiente sit blanditiis ad, repellendus, totam perspiciatis placeat doloremque numquam nesciunt beatae fugit nam ut facere consectetur.
+            </div>
+            <div className="detail"></div>
+            <div className="detail"></div>
+          </div>
+        </section>
+
         <section id="welcome">
           <Title/>
         </section>
-        
-        <section id="projects" className='bg-slate-50 bg-blend-exclusion text-red-600 text-4xl'>
+                <section id="projects" className='bg-slate-50 bg-blend-exclusion text-red-600 text-4xl'>
           <div className="parallax_layer">
             Projects
           </div>
@@ -75,6 +107,12 @@ const Home: NextPage = () => {
           </footer>
 
         </section>
+        <section>
+
+            <Project />
+        </section>
+        
+
       </main>
       </div>
   )
@@ -90,4 +128,11 @@ function changeId(currentSpan: any, path: string) {
             // if we want to update the url
             // window.location.hash = path;
     }
+}
+
+function screenSplittingScroll(scrollTop: any) {
+ let staticDiv = document.querySelector('.static');  
+ console.log(staticDiv);
+ console.log("scroll");
+//  staticDiv?.setAttribute('style', `margin-top: ${scrollTop}px`)
 }
