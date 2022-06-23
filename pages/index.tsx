@@ -47,21 +47,65 @@ const Home: NextPage = () => {
         <RsBar/>
         
       <main id='main'>
-        <section id="welcome">
+        <section id="welcome" className='classicSection'>
           <Title/>
         </section>
         
-        <section id="projects" className='bg-slate-50 bg-blend-exclusion text-red-600 text-4xl'>
+        <section id="projects" className='bg-slate-100 bg-blend-exclusion text-red-600 text-4xl'>
+          <div className="leftSticky">
+            Project
+            <div className="card"></div>
+          </div>
+          <div className="rightScroll">
+            <div className="detail">    
+               Detail .... 
+              <div className="card"></div>
+            </div>
+
+            <div className="detail">
+              Detail .... 
+              <div className="card"></div>
+            </div>
+
+            <div className="detail">
+              Detail .... 
+              <div className="card"></div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="projects" className='bg-slate-100 bg-blend-exclusion text-red-600 text-4xl'>
+          <div className="rightScroll">
+            <div className="detail">    
+               Detail .... 
+              <div className="card"></div>
+            </div>
+
+            <div className="detail">
+              Detail .... 
+              <div className="card"></div>
+            </div>
+
+            <div className="detail">
+              Detail .... 
+              <div className="card"></div>
+            </div>
+
+          </div>
+          <div className="leftSticky">
+            Project
+          <div className="card"></div>
+          </div>
+
+        </section>
+
+      <section className='bg-green-100 bg-blend-exclusion text-red-600 text-4xl classicSection'>
           <div className="parallax_layer">
             Projects
           </div>
         </section>
-      <section id="projects" className='bg-slate-50 bg-blend-exclusion text-red-600 text-4xl'>
-          <div className="parallax_layer">
-            Projects
-          </div>
-        </section>
-        <section id="about">
+        <section id="about" className='classicSection'>
           <button className='bg-Orange'>Button</button>
           <button className='bg-Green'>Button</button>
           <footer className='MediumEmphasis'>

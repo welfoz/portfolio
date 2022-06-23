@@ -10,7 +10,8 @@
   section {
     @apply snap-start;
     @apply relative;
-    @apply flex flex-col items-center justify-center h-screen;
+    @apply flex;
+    /* @apply flex flex-col items-center justify-center h-screen; */
 
     /* perspective */
     transform-style: preserve-3d;
@@ -55,8 +56,25 @@
     /* @apply inset-0; */
     @apply min-h-screen;
     @apply flex flex-col align-middle justify-center;
-
-
     /* scale calculation: 1+ ((-Z transform value)/perspective) */
+  }
+  .leftSticky {
+    @apply sticky top-0 w-1/2 bg-green-300 h-screen;
+    @apply flex justify-evenly flex-col items-center;
+  }
+  .rightScroll {
+    height: 300vh;
+    @apply w-1/2 bg-purple-500;
+    @apply flex justify-evenly flex-col items-center;
+  }
+  .detail {
+    @apply h-screen w-full;
+    @apply flex justify-evenly flex-col items-center;
+  }
+  .classicSection {
+    @apply flex-col justify-center items-center h-screen;
+  }
+  .card {
+    @apply w-2/3 h-2/3 bg-yellow-50 border border-solid border-red-700 rounded-3xl;
   }
 }
