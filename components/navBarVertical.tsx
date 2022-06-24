@@ -26,31 +26,46 @@ export default function VerticalNavBar() {
         // console.log(scrollTop);
 
         if (scrollTop && screenH != -1) {
-              currentActive.current.removeAttribute("id");
               if ((scrollTop + SCROLL_PADDING) > (8*screenH - 10)) {
                 console.log("about");
-                about.current.setAttribute("id", "active");
-                currentActive = about;
+                if (currentActive != about) {
+                    about.current.setAttribute("id", "active");
+                    currentActive.current.removeAttribute("id");
+                    currentActive = about;
+                }
 
               } else if ((scrollTop + SCROLL_PADDING) > (7*screenH - 10)) {
                 console.log("nocode");
-                nocode.current.setAttribute("id", "active");
-                currentActive = nocode;
+                if (currentActive != nocode) {
+                    nocode.current.setAttribute("id", "active");
+                    currentActive.current.removeAttribute("id");
+                    currentActive = nocode;
+                }
 
               } else if ((scrollTop + SCROLL_PADDING) > (4*screenH - 10)) {
                 console.log("site");
-                site.current.setAttribute("id", "active");
-                currentActive = site;
-
+                if (currentActive != site) {
+                    site.current.setAttribute("id", "active");
+                    currentActive.current.removeAttribute("id");
+                    currentActive = site;
+                }   
+            
               } else if ((scrollTop + SCROLL_PADDING) > (screenH - 10)) {
                 console.log("extension");
-                extension.current.setAttribute("id", "active");
-                currentActive = extension;
+                if (currentActive != extension) {
+                    extension.current.setAttribute("id", "active");
+                    currentActive.current.removeAttribute("id");
+                    currentActive = extension;
+                }
 
               } else {
                 console.log("welcome");
-                welcome.current.setAttribute("id", "active");
-                currentActive = welcome;
+                    
+                if (currentActive != welcome) {
+                    welcome.current.setAttribute("id", "active");
+                    currentActive.current.removeAttribute("id");
+                    currentActive = welcome;
+                }
               }
           }
     }
