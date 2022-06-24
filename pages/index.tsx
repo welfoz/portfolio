@@ -7,24 +7,13 @@ import Footer from '../components/footer'
 import Project from '../components/splitScreenProjects'
 import HeadComp from '../components/head'
 const Home: NextPage = () => {
-  // init main ref
-  const main = useRef() as MutableRefObject<HTMLDivElement>;
-
-  const [scrollTop, setScrollTop] = useState(-1);
-  
-
-  function handleScroll(event: React.UIEvent<HTMLDivElement>) {
-    // console.log(event);
-    setScrollTop(main.current.scrollTop);
-  }
-
   return (
       <>
         <HeadComp />
-        <VerticalNavBar scrollTop={scrollTop}/>      
+        <VerticalNavBar />      
         <RsBar/>
         
-      <main id='main' ref={main} onScroll={handleScroll}>
+      <main id='main'>
         <section id="welcome" className='classicSection'>
           <Title/>
         </section>

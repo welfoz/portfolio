@@ -2,7 +2,7 @@
 import nodeTest from 'node:test';
 import {useRef, useEffect, useState, MutableRefObject, Ref} from 'react';
 
-export default function VerticalNavBar(props: {scrollTop: number}) {
+export default function VerticalNavBar() {
     
     // refs
     const welcome = useRef() as MutableRefObject<HTMLDivElement>;
@@ -13,48 +13,60 @@ export default function VerticalNavBar(props: {scrollTop: number}) {
 
     // to track which span is active
     // as we just want 1 span active, never more
-    const [currentActive, setCurrentActive] = useState(welcome);
+    // const [currentActive, setCurrentActive] = useState(welcome);
+    let currentActive: MutableRefObject<HTMLElement> = welcome;
     
-    const [screenH, setScreenH] = useState(-1);
+    // we do NOT use useStates as it rerender the component at every changes
+    let screenH: number = -1
     const SCROLL_PADDING = 0;
+    
 
-    useEffect(() => {
-        setScreenH(window.innerHeight);
-        // console.log(props.scrollTop);
+    function changeActiveScroll(scrollTop: number) {
+        screenH = window.innerHeight;
+        // console.log(scrollTop);
 
-        if (props.scrollTop && screenH != -1) {
+        if (scrollTop && screenH != -1) {
               currentActive.current.removeAttribute("id");
-              if ((props.scrollTop + SCROLL_PADDING) > (8*screenH - 10)) {
+              if ((scrollTop + SCROLL_PADDING) > (8*screenH - 10)) {
                 console.log("about");
                 about.current.setAttribute("id", "active");
-                setCurrentActive(about);
-              } else if ((props.scrollTop + SCROLL_PADDING) > (7*screenH - 10)) {
+                currentActive = about;
+
+              } else if ((scrollTop + SCROLL_PADDING) > (7*screenH - 10)) {
                 console.log("nocode");
                 nocode.current.setAttribute("id", "active");
-                setCurrentActive(nocode);
-              } else if ((props.scrollTop + SCROLL_PADDING) > (4*screenH - 10)) {
+                currentActive = nocode;
+
+              } else if ((scrollTop + SCROLL_PADDING) > (4*screenH - 10)) {
                 console.log("site");
                 site.current.setAttribute("id", "active");
-                setCurrentActive(site);
-              } else if ((props.scrollTop + SCROLL_PADDING) > (screenH - 10)) {
+                currentActive = site;
+
+              } else if ((scrollTop + SCROLL_PADDING) > (screenH - 10)) {
                 console.log("extension");
                 extension.current.setAttribute("id", "active");
-                setCurrentActive(extension);
+                currentActive = extension;
+
               } else {
                 console.log("welcome");
                 welcome.current.setAttribute("id", "active");
-                setCurrentActive(welcome);
+                currentActive = welcome;
               }
           }
-    }, [props.scrollTop])    
-
-
-
+    }
     function changeActiveOnClick(clickedRef: MutableRefObject<HTMLDivElement>) {
         currentActive.current.removeAttribute("id");
         clickedRef.current.setAttribute("id", "active");
-        setCurrentActive(clickedRef);
+        currentActive = clickedRef;
     }
+
+    useEffect(() => {
+        document.getElementById("main")?.addEventListener("scroll", (e: Event) => {
+            console.log(e);
+            console.log(e.currentTarget?.scrollTop);
+            changeActiveScroll(e.currentTarget?.scrollTop);
+        })
+    })
     
     return(
         <div className="fixed top-1/2 mix-blend-exclusion z-30 left-4">

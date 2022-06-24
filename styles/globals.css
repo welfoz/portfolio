@@ -27,6 +27,7 @@
 
   main {
     @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth;
+    @apply snap-y snap-mandatory w-screen h-screen scroll-smooth;
 
     /* perspective */
     perspective: 300px;
