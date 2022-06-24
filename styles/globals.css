@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,81 +8,100 @@
     @apply bg-Black;
     @apply HighEmphasis;
   }
+
   section {
     @apply snap-start;
     @apply relative;
     @apply flex;
-    
+
     /* perspective */
     transform-style: preserve-3d;
+
     /* transform: translate3d(500px, 0, -500px) rotateY(30deg); */
   }
+
   body {
     @apply w-screen;
     @apply h-screen;
   }
+
   main {
     @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth;
 
     /* perspective */
     perspective: 300px;
+
     /* perspective-origin: 0%; */
   }
 }
 
 @layer components {
   /* section  */
+
   .classicSection {
     @apply flex-col justify-center items-center h-screen;
   }
+
   /* colors */
   .HighEmphasis {
     @apply text-TextColor opacity-90;
   }
+
   .MediumEmphasis {
     @apply text-TextColor opacity-70;
   }
+
   .Disabled {
     @apply text-TextColor opacity-40;
   }
 
   /* nav bar  */
   .navBarCircle {
-    @apply h-2 w-2 rounded-full inline-block bg-white hover:scale-125; 
+    @apply h-2 w-2 rounded-full inline-block bg-white hover:scale-125;
   }
+
   #active.navBarCircle {
     @apply scale-150 duration-100;
   }
+
   .navBarToolTip {
-    @apply ml-4 text-xs opacity-0 group-hover:inline-block group-hover:opacity-100 group-hover:transition group-hover:scale-125; 
+    @apply ml-4 text-xs opacity-0 group-hover:inline-block;
+    @apply group-hover:opacity-100 group-hover:transition group-hover:scale-125;
   }
 
   /* parallax  */
   .parallax_layer {
     /* @apply absolute; */
     transform: translateZ(100px) scale(1);
+
     @apply bg-green-600;
+
     /* @apply inset-0; */
     @apply min-h-screen;
     @apply flex flex-col align-middle justify-center;
+
     /* scale calculation: 1+ ((-Z transform value)/perspective) */
   }
 
   /* split screen  */
-  .leftSticky {
+  .Sticky {
     @apply sticky top-0 w-1/2 bg-green-300 h-screen;
     @apply flex justify-evenly flex-col items-center;
   }
-  .rightScroll {
+
+  .Scroll {
     height: 300vh;
+
     @apply w-1/2 bg-purple-500;
     @apply flex justify-evenly flex-col items-center;
   }
+
   .detail {
     @apply h-screen w-full;
     @apply flex justify-evenly flex-col items-center;
   }
- .card {
+
+  .card {
     @apply w-2/3 h-2/3 bg-yellow-50 border border-solid border-red-700 rounded-3xl;
   }
 }
