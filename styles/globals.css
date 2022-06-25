@@ -7,6 +7,9 @@
   html {
     @apply bg-Black;
     @apply HighEmphasis;
+
+    /* pour que les paddings soient inclus dans le height et width */
+    @apply box-border;
   }
 
   section {
@@ -16,7 +19,6 @@
 
     /* perspective */
     transform-style: preserve-3d;
-
     /* transform: translate3d(500px, 0, -500px) rotateY(30deg); */
   }
 

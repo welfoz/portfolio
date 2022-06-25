@@ -27,41 +27,40 @@ export default function VerticalNavBar() {
 
         if (scrollTop && screenH != -1) {
               if ((scrollTop + SCROLL_PADDING) > (8*screenH - 10)) {
-                console.log("about");
-                if (currentActive != about) {
-                    about.current.setAttribute("id", "active");
-                    currentActive.current.removeAttribute("id");
-                    currentActive = about;
-                }
+                    if (currentActive != about) {
+                        console.log("about");
+                        about.current.setAttribute("id", "active");
+                        currentActive.current.removeAttribute("id");
+                        currentActive = about;
+                    }
 
               } else if ((scrollTop + SCROLL_PADDING) > (7*screenH - 10)) {
-                console.log("nocode");
-                if (currentActive != nocode) {
-                    nocode.current.setAttribute("id", "active");
-                    currentActive.current.removeAttribute("id");
-                    currentActive = nocode;
-                }
+                    if (currentActive != nocode) {
+                        console.log("nocode");
+                        nocode.current.setAttribute("id", "active");
+                        currentActive.current.removeAttribute("id");
+                        currentActive = nocode;
+                    }
 
               } else if ((scrollTop + SCROLL_PADDING) > (4*screenH - 10)) {
-                console.log("site");
-                if (currentActive != site) {
-                    site.current.setAttribute("id", "active");
-                    currentActive.current.removeAttribute("id");
-                    currentActive = site;
-                }   
+                    if (currentActive != site) {
+                        console.log("site");
+                        site.current.setAttribute("id", "active");
+                        currentActive.current.removeAttribute("id");
+                        currentActive = site;
+                    }   
             
               } else if ((scrollTop + SCROLL_PADDING) > (screenH - 10)) {
-                console.log("extension");
                 if (currentActive != extension) {
+                    console.log("extension");
                     extension.current.setAttribute("id", "active");
                     currentActive.current.removeAttribute("id");
                     currentActive = extension;
                 }
 
               } else {
-                console.log("welcome");
-                    
                 if (currentActive != welcome) {
+                    console.log("welcome");
                     welcome.current.setAttribute("id", "active");
                     currentActive.current.removeAttribute("id");
                     currentActive = welcome;
@@ -69,18 +68,23 @@ export default function VerticalNavBar() {
               }
           }
     }
+
     function changeActiveOnClick(clickedRef: MutableRefObject<HTMLDivElement>) {
         currentActive.current.removeAttribute("id");
         clickedRef.current.setAttribute("id", "active");
         currentActive = clickedRef;
     }
 
-    useEffect(() => {
-        document.getElementById("main")?.addEventListener("scroll", (e: Event) => {
+    function scrollEvent(e: Event) {
             console.log(e);
             console.log(e.currentTarget?.scrollTop);
             changeActiveScroll(e.currentTarget?.scrollTop);
-        })
+    }
+    useEffect(() => {
+        document.getElementById("main")?.addEventListener("scroll", scrollEvent)
+        return () => {
+            document.getElementById("main")?.removeEventListener("scroll", scrollEvent)
+        }
     })
     
     return(
