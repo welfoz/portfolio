@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import Skill from "./skill";
+import Skills from "./skills";
 
 export default function TiltCard(){
     const card = useRef(null);
@@ -48,16 +49,12 @@ export default function TiltCard(){
 
     return(
         <div ref={card} className="card" onMouseMove={mouseOver} onMouseLeave={mouseLeave} onMouseEnter={mouseEnter}>
-            <span className="type">EXTENSION WEB</span>
-            <h1>Upwork Cover Letter Autofiller</h1>
-            <div className="fixed bottom-0 w-full h-1/5 flex items-center transkill">
-                <Skill>
-                    vim    
-                </Skill> 
-                <Skill>
-                    python    
-                </Skill> 
-            </div>
+                <span className="type">EXTENSION WEB</span>
+                <span className="title">Upwork Cover Letter Autofiller</span>
+                <div className="text-black text-lg  w-full mt-3">
+                    une brève des de ce que ca eanie ajo ad dao dakodz aok dzako dzaokzj idazjo dazjo dajzi iazjd izajdizajd iazjd aojdazidj aizdjiazdjiaz   
+                </div>
+                <Skills />           
         </div>
     )
 }

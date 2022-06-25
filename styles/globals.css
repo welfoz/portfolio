@@ -81,14 +81,14 @@
 
   /* split screen  */
   .Sticky {
-    @apply sticky top-0 w-1/2 bg-green-300 h-screen;
-    @apply flex justify-evenly flex-col items-center;
+    @apply sticky top-0 w-1/2 h-screen bg-Black;
+    @apply flex justify-center flex-col items-center;
   }
 
   .Scroll {
     height: 300vh;
 
-    @apply w-1/2 bg-purple-500;
+    @apply w-1/2 bg-Black;
     @apply flex justify-evenly flex-col items-center;
   }
 
@@ -98,9 +98,9 @@
   }
 
   .card {
-    @apply w-2/3 h-2/3 bg-yellow-50 rounded-3xl;
-    @apply flex flex-col justify-start items-center;
-    @apply p-3;
+    @apply w-2/3 h-1/2 bg-yellow-50 rounded-3xl;
+    @apply flex flex-col justify-start items-start;
+    @apply p-5;
     @apply shadow-lg;
 
     /* tilt effect */
@@ -108,18 +108,21 @@
     transform: perspective(1000px);
   }
 
-  .card h1 {
+  .title {
     transform: translateZ(50px);
 
-    @apply text-2xl text-black font-semibold;
+    @apply text-black font-semibold ml-2 text-2xl;
+
+    /* font-size: 1.35rem; */
+    /* line-height: 1.85rem; */
 
     letter-spacing: -0.02em;
   }
 
-  .card .type {
-    transform: translateZ(50px);
+  .type {
+    transform: translateZ(40px);
 
-    @apply text-xs text-cyan-800;
+    @apply text-xs text-cyan-800 ml-2;
 
     letter-spacing: 0.06em;
   }

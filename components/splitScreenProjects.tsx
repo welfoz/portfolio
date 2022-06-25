@@ -4,7 +4,9 @@ export default function Project(props: {left: string, right: string}) {
     return(
         <>
           <div className={props.left}>
-                &#60;project&#62;
+                <div className="mb-10">
+                  &#60;project&#62;
+                </div>
               <TiltCard />
           </div>
           <div className={props.right}>
