@@ -85,7 +85,7 @@ export default function VerticalNavBar() {
         return () => {
             document.getElementById("main")?.removeEventListener("scroll", scrollEvent)
         }
-    })
+    }, [])
     
     return(
         <div className="fixed top-1/2 mix-blend-exclusion z-30 left-4">
