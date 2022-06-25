@@ -17,8 +17,8 @@
     @apply relative;
     @apply flex;
 
-    /* perspective */
     transform-style: preserve-3d;
+
     /* transform: translate3d(500px, 0, -500px) rotateY(30deg); */
   }
 
@@ -30,10 +30,7 @@
   main {
     @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth;
 
-    /* perspective */
     perspective: 300px;
-
-    /* perspective-origin: 0%; */
   }
 }
 
@@ -73,12 +70,9 @@
 
   /* parallax  */
   .parallax_layer {
-    /* @apply absolute; */
     transform: translateZ(100px) scale(1);
 
     @apply bg-green-600;
-
-    /* @apply inset-0; */
     @apply min-h-screen;
     @apply flex flex-col align-middle justify-center;
 
@@ -104,25 +98,33 @@
   }
 
   .card {
-    @apply w-2/3 h-2/3 bg-yellow-50 border border-solid border-red-700 rounded-3xl;
+    @apply w-2/3 h-2/3 bg-yellow-50 rounded-3xl;
     @apply flex flex-col justify-start items-center;
     @apply p-3;
-
-
-    /* transform: translateZ(100px) scale(1); */
+    @apply shadow-lg;
 
     /* tilt effect */
     transform-style: preserve-3d;
-    /* transform: perspective(1000px) */
+    transform: perspective(1000px);
   }
 
   .card h1 {
-    transform: translateZ(40px);
-    @apply text-2xl text-black;
+    transform: translateZ(50px);
+
+    @apply text-2xl text-black font-semibold;
+
+    letter-spacing: -0.02em;
   }
 
-  .card h3 {
-    transform: translateZ(20px);
+  .card .type {
+    transform: translateZ(50px);
+
     @apply text-xs text-cyan-800;
+
+    letter-spacing: 0.06em;
+  }
+
+  .transkill {
+    transform: translateZ(30px);
   }
 }
