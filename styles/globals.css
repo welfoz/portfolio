@@ -98,10 +98,13 @@
   }
 
   .card {
-    @apply w-2/3 h-1/2 bg-yellow-50 rounded-3xl;
+    @apply rounded-3xl w-2/3 h-1/2;
     @apply flex flex-col justify-start items-start;
     @apply p-5;
     @apply shadow-lg;
+
+    /* because opacity breaks 3d and we just want to apply the opacity to the background */
+    background-color: rgb(255 255 255 / 85%);
 
     /* tilt effect */
     transform-style: preserve-3d;
@@ -114,6 +117,7 @@
     @apply text-black font-semibold ml-2 text-2xl;
 
     /* font-size: 1.35rem; */
+
     /* line-height: 1.85rem; */
 
     letter-spacing: -0.02em;
@@ -122,7 +126,8 @@
   .type {
     transform: translateZ(40px);
 
-    @apply text-xs text-cyan-800 ml-2;
+    @apply text-lg text-cyan-500 ml-2;
+    @apply mb-5;
 
     letter-spacing: 0.06em;
   }
