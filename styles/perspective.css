@@ -1,0 +1,22 @@
+@tailwind components;
+@tailwind base;
+
+@layer base {
+    main {
+        perspective: 10px;
+        perspective-origin: 60% 50%;
+    }
+}
+
+@layer components {
+    .pers3d {
+        transform-style: preserve-3d;
+    }
+    .transZ10 {
+        transform: translateZ(2px) scale(0.8);
+    }
+    
+    .transZ6 {
+        transform: translateZ(6px) scale(0.4);
+    }
+}

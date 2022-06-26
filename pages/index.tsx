@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           <Title/>
         </section>
         
-        <section id="extension" className='bg-slate-100 bg-blend-exclusion text-red-600 text-4xl'>
+        <section id="extension" className='bg-slate-100 bg-blend-exclusion text-red-600 text-4xl pers3d'>
             <Project 
               left="Sticky"
               right="Scroll"
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
               />
         </section>
 
-        <section id="nocode" className='bg-green-100 bg-blend-exclusion text-red-600 text-4xl classicSection'>
+        <section id="nocode" className='bg-green-100 bg-blend-exclusion text-red-600 text-4xl classicSection pers3d'>
             <div className="parallax_layer">
               No code
             </div>
