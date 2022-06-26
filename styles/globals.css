@@ -17,7 +17,6 @@
     @apply relative;
     @apply flex;
 
-
     /* transform: translate3d(500px, 0, -500px) rotateY(30deg); */
   }
 
@@ -84,15 +83,9 @@
   }
 
   .Scroll {
-    height: 300vh;
+    height: 200vh;
 
     @apply w-1/2 bg-Black;
-    @apply flex justify-evenly flex-col items-center;
-  }
-
-  .detail {
-    @apply h-screen w-full;
-    @apply flex justify-evenly flex-col items-center;
   }
 
   .card {
@@ -113,11 +106,8 @@
     transform: translateZ(50px);
 
     @apply text-black font-semibold ml-2 text-2xl;
-
     /* font-size: 1.35rem; */
-
     /* line-height: 1.85rem; */
-
     letter-spacing: -0.02em;
   }
 

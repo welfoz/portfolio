@@ -1,10 +1,11 @@
+/* stylelint-disable indentation */
 @tailwind components;
 @tailwind base;
 
 @layer base {
     main {
         perspective: 10px;
-        perspective-origin: 60% 50%;
+        perspective-origin: 65.7% 33%;
     }
 }
 
@@ -12,11 +13,17 @@
     .pers3d {
         transform-style: preserve-3d;
     }
-    .transZ10 {
+
+    .transZ2 {
         transform: translateZ(2px) scale(0.8);
     }
-    
+
     .transZ6 {
         transform: translateZ(6px) scale(0.4);
     }
+
+    .transZ-4 {
+        transform: translateZ(4px) scale(0.6);
+    }
+
 }
