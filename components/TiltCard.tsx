@@ -1,17 +1,33 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import Skills from "./skills";
 
-export default function TiltCard(){
+export default function TiltCard(props: {type: string, title: string, desc: string, skillsAndLinks: any, position: "left" | "right"}){
     const card = useRef(null);
 
     const tiltRotation = 25;
     const perspective = 1000;
     const scale = 1;
-    function mouseOver(event: React.MouseEvent) {
-        // console.log(card);
 
-        const centerX = card.current.offsetLeft + card.current.offsetWidth/2;
+    let offsetX = 0;
+
+
+    function mouseOver(event: React.MouseEvent) {
+
+        // init var according to the position
+        // const offsetX = props.position == "left": 'offsetLeft' ? props.position == "right";
+        // for better performance => update offsetX only when the screen is resized
+        if (props.position == "left") {
+            offsetX = card.current.offsetLeft;
+        } else if (props.position == "right") {
+            // we assume we only have two container within the width of the screen
+            // we add |---container1-----|--------------container2----|
+            //        | width cont 1     | +  offsetLeft              |
+            offsetX = card.current.offsetParent.offsetWidth + card.current.offsetLeft;
+        }
+
+        const centerX = offsetX +  card.current.offsetWidth/2;
         const centerY = card.current.offsetTop + card.current.offsetHeight/2;
+        // console.log("center")
         // console.log(centerX, centerY);
         
         // clientX and clientY returns the coordonates 
@@ -48,13 +64,15 @@ export default function TiltCard(){
 
     return(
         <>
-            <span className="type"> &#60;EXTENSION WEB /&#62;</span>
+            <span className="type"> &#60;{props.type} /&#62;</span>
             <div ref={card} className="card" onMouseMove={mouseOver} onMouseLeave={mouseLeave} onMouseEnter={mouseEnter}>
-                    <span className="title">Upwork Cover Letter Autofiller</span>
+                    <span className="title">{props.title}</span>
                     <div className="text-black text-lg  w-full mt-3">
-                        une brève des de ce que ca eanie ajo ad dao dakodz aok dzako dzaokzj idazjo dazjo dajzi iazjd izajdizajd iazjd aojdazidj aizdjiazdjiaz   
+                        {props.desc}
                     </div>
-                    <Skills />           
+                    {/* <Skills />            */}
+                    {props.skillsAndLinks}
+                    
             </div>
         </>
     )

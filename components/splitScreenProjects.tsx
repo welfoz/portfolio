@@ -3,14 +3,14 @@ import upworkExtension from "../public/upwork extension.png"
 import upworkHi from "../public/upwork cover letter.png"
 import Image from "next/image";
 
-export default function Project(props: {left: string, right: string}) {
+export default function Project(props: any) {
     return(
         <>
           <div className={props.left}>
                 {/* <div className="mb-10"> */}
                   {/* &#60;project&#62; */}
                 {/* </div> */}
-              <TiltCard />
+              {/* <TiltCard /> */}
           </div>
           
           <div className={props.right + " pers3d bg-purple-300"}>

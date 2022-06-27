@@ -20,19 +20,31 @@
         transform: translateZ(1vw) scale(calc(1 - (1/10)));
         top:14%;
     }
-
+    
+    .transZ-1-left {
+        transform: translateZ(1vw) scale(calc(1 - (1/10)));
+        top:14%;
+    }
     .transZ-6 {
         transform: translateZ(6vw) scale(calc(1 - (6/10)));
         top: 41%;
         left: -9%;
     }
-
+    .transZ-6-left {
+        transform: translateZ(6vw) scale(calc(1 - (6/10)));
+        top: 41%;
+        right: -9%;
+    }
     .transZ-07 {
         transform: translateZ(0.7vw) scale(calc(1 - (0.7/10)));
         top:23%;
-        left: 7%;
+        right: 7%;
     }
-
+    .transZ-07-left {
+        transform: translateZ(0.7vw) scale(calc(1 - (0.7/10)));
+        top:23%;
+        right: 7%;
+    }
     .img-extension {
     }
 
