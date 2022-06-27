@@ -83,13 +83,13 @@
   }
 
   .Scroll {
-    height: 200vh;
+    height: 150vh;
 
     @apply w-1/2 bg-Black;
   }
 
   .card {
-    @apply rounded-3xl w-2/3 h-1/2;
+    @apply rounded-3xl w-2/3 h-1/3;
     @apply flex flex-col justify-start items-start;
     @apply p-5;
     @apply shadow-lg;

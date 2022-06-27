@@ -1,4 +1,7 @@
 import TiltCard from "./TiltCard";
+import upworkExtension from "../public/upwork extension.png"
+import upworkHi from "../public/upwork cover letter.png"
+import Image from "next/image";
 
 export default function Project(props: {left: string, right: string}) {
     return(
@@ -9,17 +12,15 @@ export default function Project(props: {left: string, right: string}) {
                 {/* </div> */}
               <TiltCard />
           </div>
-          <div className={props.right + " pers3d"}>
-            <div className="transZ2 absolute top-48 right-16 h-1/5 w-2/3 bg-green-300">    
-              2
+          
+          <div className={props.right + " pers3d bg-purple-300"}>
+            <div className="transZ-07 absolute h-fit w-fit img-extension-hi">
+               <Image src={upworkHi} alt="upwork extension action" />
             </div>
-            <div className="transZ6 absolute top-96 left-0 h-1/3 w-2/3 bg-yellow-300 mt-10">
-                6
+            <div className="transZ-6 top-44 absolute h-1/5 w-2/3 bg-green-300">
+               <Image src={upworkExtension} alt="upwork extension" />
             </div>
-          <div className="transZ-4 absolute bottom-32 right-44 h-1/3 w-2/3 bg-cyan-300 mt-10">
-                6
-            </div>
-           </div>
+          </div>
         </>
 
     )
