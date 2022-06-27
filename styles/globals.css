@@ -78,14 +78,16 @@
 
   /* split screen  */
   .Sticky {
-    @apply sticky top-0 w-1/2 h-screen bg-Black;
+    @apply sticky top-0 w-2/5 h-screen bg-Black;
     @apply flex justify-center flex-col items-center;
   }
 
   .Scroll {
     height: 150vh;
 
-    @apply w-1/2 bg-Black;
+
+    @apply w-3/5 bg-Black;
+
   }
 
   .card {
@@ -112,12 +114,12 @@
   }
 
   .type {
-    transform: translateZ(40px);
+    /* transform: translateZ(40px); */
 
-    @apply text-lg text-cyan-500 ml-2;
-    @apply mb-5;
+    @apply text-3xl font-semibold text-cyan-500 ml-2;
+    @apply mb-16;
 
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
   }
 
   .transkill {

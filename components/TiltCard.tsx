@@ -22,9 +22,10 @@ export default function TiltCard(props: {type: string, title: string, desc: stri
             // we assume we only have two container within the width of the screen
             // we add |---container1-----|--------------container2----|
             //        | width cont 1     | +  offsetLeft              |
-            offsetX = card.current.offsetParent.offsetWidth + card.current.offsetLeft;
+            offsetX = card.current.offsetParent.previousSibling.offsetWidth + card.current.offsetLeft;
         }
 
+        console.log(card)
         const centerX = offsetX +  card.current.offsetWidth/2;
         const centerY = card.current.offsetTop + card.current.offsetHeight/2;
         // console.log("center")
