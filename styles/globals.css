@@ -125,4 +125,8 @@
   .transkill {
     transform: translateZ(30px);
   }
+
+  .pointer {
+    @apply absolute w-10 h-10 rounded-full;
+  }
 }

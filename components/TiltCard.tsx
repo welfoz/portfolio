@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react"
+import React, { MutableRefObject, useEffect, useRef } from "react"
 import Skills from "./skills";
 
 export default function TiltCard(props: {type: string, title: string, desc: string, skillsAndLinks: any, position: "left" | "right"}){
-    const card = useRef(null);
+    const card = useRef() as MutableRefObject<HTMLDivElement>;
 
     const tiltRotation = 25;
     const perspective = 1000;
