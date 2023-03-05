@@ -76,8 +76,8 @@ export default function VerticalNavBar() {
     }
 
     function scrollEvent(e: Event) {
-            console.log(e);
-            console.log(e.currentTarget?.scrollTop);
+            // console.log(e);
+            // console.log(e.currentTarget?.scrollTop);
             changeActiveScroll(e.currentTarget?.scrollTop);
     }
     useEffect(() => {

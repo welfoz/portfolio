@@ -13,7 +13,8 @@ export default function Project(props: any) {
               {/* <TiltCard /> */}
           </div>
           
-          <div className={props.right + " pers3d bg-purple-300"}>
+          {/* <div className={props.right + " pers3d bg-purple-300"}> */}
+          <div className={props.right + " pers3d"}>
             <div className="transZ-07 absolute h-fit w-fit img-extension-hi">
                <Image src={upworkHi} alt="upwork extension action" />
             </div>

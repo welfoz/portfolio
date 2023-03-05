@@ -12,9 +12,9 @@ export default function TiltCard(props: {type: string, title: string, desc: stri
 
 
     function mouseOver(event: React.MouseEvent) {
+        // console.log(card)
 
         // init var according to the position
-        // const offsetX = props.position == "left": 'offsetLeft' ? props.position == "right";
         // for better performance => update offsetX only when the screen is resized
         if (props.position == "left") {
             offsetX = card.current.offsetLeft;
@@ -25,11 +25,8 @@ export default function TiltCard(props: {type: string, title: string, desc: stri
             offsetX = card.current.offsetParent.previousSibling.offsetWidth + card.current.offsetLeft;
         }
 
-        console.log(card)
         const centerX = offsetX +  card.current.offsetWidth/2;
         const centerY = card.current.offsetTop + card.current.offsetHeight/2;
-        // console.log("center")
-        // console.log(centerX, centerY);
         
         // clientX and clientY returns the coordonates 
         // of the mouse within the app viewport
@@ -37,7 +34,6 @@ export default function TiltCard(props: {type: string, title: string, desc: stri
         // in the center of the card element
         const mouseX = event.clientX - centerX;
         const mouseY = event.clientY - centerY;
-        console.log(mouseX, mouseY);
 
         const rotateX = (tiltRotation*(mouseY/(card.current.offsetHeight))).toFixed(2);
         const rotateY = -(tiltRotation*(mouseX/(card.current.offsetWidth))).toFixed(2);

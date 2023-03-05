@@ -4,16 +4,23 @@
 
 @layer base {
     main {
-        /* perspective: 10px; */
+        perspective: 10px;
         /* perspective-origin: 65.7% 33%; */
-        perspective: 10vw;
+        /* perspective: 10vw; */
 
     }
 }
 
 @layer components {
+    .pers { 
+        perspective: 10px;
+    }
     .pers3d {
         transform-style: preserve-3d;
+    }
+
+    .perspective {
+        perspective: 10px;
     }
 
     .transZ-1 {
@@ -26,25 +33,74 @@
         top:14%;
     }
     .transZ-6 {
-        transform: translateZ(6vw) scale(calc(1 - (6/10)));
+        transform: translateZ(-20px) scale(calc(1 + (20/10)));
         top: 41%;
-        left: -9%;
+        left: 35%;
     }
     .transZ-6-left {
-        transform: translateZ(6vw) scale(calc(1 - (6/10)));
+        transform: translateZ(6px) scale(calc(1 - (6/10)));
         top: 41%;
         right: -9%;
     }
     .transZ-07 {
-        transform: translateZ(0.7vw) scale(calc(1 - (0.7/10)));
+        transform: translateZ(-4px) scale(calc(1 + (4/10)));
         top:23%;
-        right: 7%;
+        right: -50%;
     }
     .transZ-07-left {
-        transform: translateZ(0.7vw) scale(calc(1 - (0.7/10)));
-        top:23%;
+        transform: translatez(-10px) scale(calc(1 + (10/10)));
+        top:50%;
         right: 7%;
     }
+    .transZ-back3 {
+        transform: translatez(-50px) scale(calc(1 + (50/10)));
+        height: 100vh;
+        width: 600%;
+        bottom: 0%;
+        position: absolute;
+
+    }
+    .transZ-back1 {
+        transform: translatez(-20px) scale(calc(1 + (20/10)));
+        height: 15vh;
+        width: 60%;
+        left: 50%;
+        position: absolute;
+    }
+    .transZ-back2 {
+        transform: translatez(-10px) scale(calc(1 + (10/10)));
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0%;
+    }
+    .transZ-triangle1 {
+        transform: translatez(-10px) scale(calc(1 + (10/10)));
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+    }
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 5vw solid transparent;
+        border-right: 5vw solid transparent;
+        border-bottom: 10vh solid #000;
+        position: absolute;
+        /* top: 30%; */
+        left: 50%;
+        z-index: 1;
+    }
+    .square {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: 1;
+    }
+    
     .img-extension {
     }
 

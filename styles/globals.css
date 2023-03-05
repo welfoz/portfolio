@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  color: "#FFFFFF";
+  background-color: "#000000";
+}
+
 @layer base {
   html {
     @apply bg-Black;
@@ -17,7 +22,7 @@
     @apply relative;
     @apply flex;
 
-    /* transform: translate3d(500px, 0, -500px) rotateY(30deg); */
+    /* transform: translate3d(100px, 0, -100px) rotateY(5deg); */
   }
 
   body {
@@ -26,8 +31,7 @@
   }
 
   main {
-    @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth;
-
+    @apply snap-y overflow-y-scroll snap-mandatory w-screen h-screen scroll-smooth overflow-x-hidden bg-cyan-400;
   }
 }
 
@@ -35,7 +39,7 @@
   /* section  */
 
   .classicSection {
-    @apply flex-col justify-center items-center h-screen;
+    @apply flex-col justify-center items-center h-screen bg-black z-20;
   }
 
   /* colors */
@@ -67,7 +71,7 @@
 
   /* parallax  */
   .parallax_layer {
-    transform: translateZ(100px) scale(1);
+    /* transform: translateZ(100px) scale(1); */
 
     @apply bg-green-600;
     @apply min-h-screen;
@@ -78,15 +82,14 @@
 
   /* split screen  */
   .Sticky {
-    @apply sticky top-0 w-2/5 h-screen bg-Black;
+    @apply sticky top-0 w-2/5 h-screen;
     @apply flex justify-center flex-col items-center;
   }
 
   .Scroll {
-    height: 150vh;
+    height: 400vh;
 
-
-    @apply w-3/5 bg-Black;
+    @apply w-3/5;
 
   }
 
