@@ -1,5 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef } from "react"
-import Skills from "./skills";
+import React, { MutableRefObject, useRef } from "react"
 
 export default function TiltCard(props: {type: string, title: string, desc: string, skillsAndLinks: any, position: "left" | "right"}){
     const card = useRef() as MutableRefObject<HTMLDivElement>;
@@ -67,7 +66,6 @@ export default function TiltCard(props: {type: string, title: string, desc: stri
                     <div className="text-black text-lg  w-full mt-3">
                         {props.desc}
                     </div>
-                    {/* <Skills />            */}
                     {props.skillsAndLinks}
                     
             </div>

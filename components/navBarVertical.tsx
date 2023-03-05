@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import nodeTest from 'node:test';
-import {useRef, useEffect, useState, MutableRefObject, Ref} from 'react';
+import {useRef, useEffect, MutableRefObject} from 'react';
 
 export default function VerticalNavBar() {
     

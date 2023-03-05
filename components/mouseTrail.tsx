@@ -12,6 +12,7 @@ export default function MouseTrail() {
 
     useEffect(() => {
         document.addEventListener("mousemove", (e) => {
+            // console.log(e)
            
             left = `${e.clientX.toString()}px`;
             top = `${e.clientY.toString()}px`;

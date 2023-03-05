@@ -6,15 +6,10 @@
     main {
         perspective: 10px;
         /* perspective-origin: 65.7% 33%; */
-        /* perspective: 10vw; */
-
     }
 }
 
 @layer components {
-    .pers { 
-        perspective: 10px;
-    }
     .pers3d {
         transform-style: preserve-3d;
     }

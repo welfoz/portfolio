@@ -3,11 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  color: "#FFFFFF";
-  background-color: "#000000";
-}
-
 @layer base {
   html {
     @apply bg-Black;
@@ -39,7 +34,7 @@ html {
   /* section  */
 
   .classicSection {
-    @apply flex-col justify-center items-center h-screen bg-black z-20;
+    @apply flex-col justify-center items-center h-screen;
   }
 
   /* colors */
@@ -69,17 +64,6 @@ html {
     @apply group-hover:opacity-100 group-hover:transition group-hover:scale-125;
   }
 
-  /* parallax  */
-  .parallax_layer {
-    /* transform: translateZ(100px) scale(1); */
-
-    @apply bg-green-600;
-    @apply min-h-screen;
-    @apply flex flex-col align-middle justify-center;
-
-    /* scale calculation: 1+ ((-Z transform value)/perspective) */
-  }
-
   /* split screen  */
   .Sticky {
     @apply sticky top-0 w-2/5 h-screen;
@@ -88,9 +72,7 @@ html {
 
   .Scroll {
     height: 400vh;
-
     @apply w-3/5;
-
   }
 
   .card {
@@ -111,14 +93,10 @@ html {
     transform: translateZ(50px);
 
     @apply text-black font-semibold ml-2 text-2xl;
-    /* font-size: 1.35rem; */
-    /* line-height: 1.85rem; */
     letter-spacing: -0.02em;
   }
 
   .type {
-    /* transform: translateZ(40px); */
-
     @apply text-3xl font-semibold text-cyan-500 ml-2;
     @apply mb-16;
 
